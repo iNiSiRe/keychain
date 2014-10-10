@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>Key Chain</title>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.zeroclipboard.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('button').on('click', function () {
+                var name = $(this).parents('.item').attr('data-name');
+
+            });
+
+            $("body").on("copy", ".clipboard", function(e) {
+                e.clipboardData.clearData();
+
+                e.preventDefault();
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, Sans-serif;
+            font-size: 16px;
+            color: #EEE;
+        }
+
+        button {
+            font: inherit;
+            color: inherit;
+            border-radius: 5px;
+            background-color: rgba(255, 0, 0, 0.6);
+            border: 0;
+            padding: 5px 10px;
+        }
+
+        button.hover {
+            background-color: rgba(255, 0, 0, 0.4);
+            cursor: pointer;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .wrapper {
+            width: 50%;
+            min-width: 300px;
+            max-width: 500px;
+            margin: 10px auto;
+        }
+
+        .item {
+            width: 100%;
+            display: table;
+            background-color: rgba(0, 0, 0, 0.7);
+
+            border-radius: 5px;
+            padding: 2px 5px;
+        }
+
+        .name, .button {
+            display: table-cell;
+        }
+
+        .name {
+            text-align: left;
+        }
+
+        .button {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item" data-name="ldap">
+            <div class="name">
+                <span>LDAP</span>
+            </div>
+            <div class="button">
+                <button class="clipboard">Copy</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
