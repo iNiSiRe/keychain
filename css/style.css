@@ -1,0 +1,20 @@
+body {
+    padding-top: 20px;
+}
+
+.item {
+    display: table;
+}
+
+.item .name {
+    font-size: inherit;
+    display: table-cell;
+    width: 80%;
+    vertical-align: middle;
+}
+
+.item .control {
+    width: 20%;
+    display: table-cell;
+    text-align: right;
+}
